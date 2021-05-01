@@ -8,6 +8,15 @@ from mininet.log import setLogLevel, info
 from mininet.node import OVSKernelSwitch, RemoteController
 
 def myNetwork():
+    band = 0
+    delay = 0
+    ploss = 0
+
+    band = input("What is the bandwidth you would like:\n ")
+    delay = input("What is the delay you would like:\n ")
+    ploss = input("What is the packet loss you would like:\n ")
+
+    print("band is: ", band,"delay is: ", delay,"ploss is: ", ploss)
 
     net = Mininet( topo=None,
                    build=False)
@@ -34,6 +43,8 @@ def myNetwork():
 
     CLI(net)
     net.stop()
+
+
 
 if __name__ == '__main__':
     setLogLevel( 'info' )
