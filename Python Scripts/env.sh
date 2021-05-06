@@ -31,5 +31,4 @@ cp -a /home/adrew/.Xauthority .Xauthority
 chown root: .Xauthority
 
 su adrew
-cd /var/www/html
-wget --no-check-certificate "https://onedrive.live.com/download?cid=F88332955AD48600&resid=F88332955AD48600%21105289&authkey=AKy_cxawQ1QbDmg"
+
