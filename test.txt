@@ -1,0 +1,24 @@
+Dash 7000 Frag 4000
+
+http://192.168.10.241/test.mpd
+
+http://192.168.10.241/video_600k_dash.mpd
+http://10.0.0.1/video_600k_dash.mpd
+http://192.168.10.241/video_1200k_dash.mpd
+http://192.168.10.228/video_1200k_dash.mpd
+http://192.168.10.241/video_2400k_dash.mpd
+
+http://10.0.0.1/test.mpd
+
+apache2ctl -k start
+apache2ctl -k stop
+netstat -ltn
+su adrew
+microsoft-edge-dev
+
+cd /ofl/bin$
+./karaf
+
+sh ovs-ofctl -O OpenFlow13 add-flow s1 action=normal
+sh ovs-ofctl -O OpenFlow13 dump-flows s1  
+Lab 9 ^^
