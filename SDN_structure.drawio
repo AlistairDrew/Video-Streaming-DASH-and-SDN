@@ -1,11 +1,11 @@
-<mxfile host="app.diagrams.net" modified="2021-05-20T05:52:42.437Z" agent="5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36" etag="y3bjh-4w6ZUQ0lhTuIWm" version="14.6.13" type="github">
+<mxfile host="app.diagrams.net" modified="2021-05-20T05:57:27.784Z" agent="5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.212 Safari/537.36" etag="mTEeDbRN_szd6mgDj-dn" version="14.6.13" type="github">
   <diagram id="J62VowWL7jAZoyvOlwZC" name="Page-1">
     <mxGraphModel dx="2272" dy="794" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="Rc9hNawXG7srM5Kod6fI-3" value="" style="rounded=1;whiteSpace=wrap;html=1;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;connectable=1;" vertex="1" parent="1">
-          <mxGeometry x="-30" y="710" width="560" height="270" as="geometry" />
+          <mxGeometry x="-100" y="710" width="700" height="270" as="geometry" />
         </mxCell>
         <mxCell id="_3_Tq_P-B7PArioMOfRt-22" value="" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="-7" y="30" width="435" height="190" as="geometry" />
@@ -162,7 +162,7 @@
           <mxGeometry x="30" y="797.5" width="76" height="95" as="geometry" />
         </mxCell>
         <mxCell id="Rc9hNawXG7srM5Kod6fI-18" value="" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.containers.browserWindow;rSize=0;strokeColor=#666666;strokeColor2=#008cff;strokeColor3=#c4c4c4;mainText=,;recursiveResize=0;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;connectable=1;" vertex="1" parent="1">
-          <mxGeometry x="175" y="771.75" width="330" height="146.5" as="geometry" />
+          <mxGeometry x="230" y="771.75" width="320" height="146.5" as="geometry" />
         </mxCell>
         <mxCell id="Rc9hNawXG7srM5Kod6fI-19" value="Page 1" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.containers.anchor;fontSize=17;fontColor=#666666;align=left;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;connectable=1;" vertex="1" parent="Rc9hNawXG7srM5Kod6fI-18">
           <mxGeometry x="60" y="12" width="110" height="26" as="geometry" />
@@ -215,14 +215,29 @@
             <mxPoint x="90" y="810" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Rc9hNawXG7srM5Kod6fI-44" value="" style="endArrow=classic;html=1;entryX=0.682;entryY=-0.019;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="Rc9hNawXG7srM5Kod6fI-18">
+        <mxCell id="Rc9hNawXG7srM5Kod6fI-44" value="" style="endArrow=classic;html=1;" edge="1" parent="1">
           <mxGeometry width="50" height="50" relative="1" as="geometry">
             <mxPoint x="400" y="560" as="sourcePoint" />
-            <mxPoint x="400" y="680" as="targetPoint" />
+            <mxPoint x="400" y="760" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="Rc9hNawXG7srM5Kod6fI-45" value="Segment movement&amp;nbsp;" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+        <mxCell id="Rc9hNawXG7srM5Kod6fI-45" value="Segment Flow" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="22" y="390" width="78" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Rc9hNawXG7srM5Kod6fI-49" value="Segment Flow" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="313" y="390" width="78" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Rc9hNawXG7srM5Kod6fI-50" value="Segment Flow" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-20" y="647.71" width="78" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Rc9hNawXG7srM5Kod6fI-51" value="Segment Flow" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="266.5" y="649.0500000000001" width="78" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="Rc9hNawXG7srM5Kod6fI-52" value="h1 Hosting webserver" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="96.5" y="640" width="64" height="31" as="geometry" />
+        </mxCell>
+        <mxCell id="Rc9hNawXG7srM5Kod6fI-54" value="h4 accessing Dash Client via Webserver on h1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="413" y="623.47" width="107" height="54.24" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
