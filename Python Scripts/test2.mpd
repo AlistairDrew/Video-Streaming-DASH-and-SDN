@@ -148,6 +148,13 @@ sudo sed -i '' $'757s/^/line_to_be_added\\\n/' dashjs/app/main_test.js
 sudo sed -i '757 s/^/var sumOfBuffer = 0;\n var prevBuffer = 0;\n var bufferCounter = 0;\n var sumOfBitrate =0; \n var bitrateCounter=0;\n/' dashjs/app/main_test.js
 
 
+
+
+
+sudo sed -i '1 s#^#var sumOfBuffer = 0;\n var prevBuffer = 0;\n var bufferCounter = 0;\n var sumOfBitrate =0; \n var bitrateCounter=0;\n#;778 s#^#\nif (bufferLevel != prevBuffer) {\nsumOfBuffer = sumOfBuffer + bufferLevel;\nbufferCounter++;\n }\nprevBuffer = bufferLevel;\n sumOfBitrate = sumOfBitrate + bitrate;\n bitrateCounter++;\n var meanBuffer = sumOfBuffer/bufferCounter;\n var meanBitrate = sumOfBitrate/bitrateCounter;\n  console.log("Mean Bufferlenght: " + meanBuffer.toString() + "Mean Bitrate: " + meanBitrate.toString());#' dashjs/app/main_test.js
+
+
+
 if (bufferLevel != prevBuffer) {
 
                 sumOfBuffer = sumOfBuffer + bufferLevel;
@@ -168,13 +175,14 @@ sudo sed -i '757 s/^/var sumOfBuffer = 0;\n var prevBuffer = 0;\n var bufferCoun
 
 
 
-
+sudo sed -i '757 s/^/var sumOfBuffer = 0;\n var prevBuffer = 0;\n var bufferCounter = 0;\n var sumOfBitrate =0; \n var bitrateCounter=0;\n/;778 s/^/\nif (bufferLevel != prevBuffer) {\nsumOfBuffer = sumOfBuffer + bufferLevel;\nbufferCounter++;\n }\n prevBuffer = bufferLevel;\n sumOfBitrate = sumOfBitrate + bitrate;\n /' dashjs/app/main_test.js
 
             
            
             
             
            
+sudo sed -i '757 s#^#var sumOfBuffer = 0;\n var prevBuffer = 0;\n var bufferCounter = 0;\n var sumOfBitrate =0; \n var bitrateCounter=0;\n#;778 s#^#\nif (bufferLevel != prevBuffer) {\nsumOfBuffer = sumOfBuffer + bufferLevel;\nbufferCounter++;\n }\nprevBuffer = bufferLevel;\n sumOfBitrate = sumOfBitrate + bitrate;\n bitrateCounter++;\n var meanBuffer = sumOfBuffer/bufferCounter;\n var meanBitrate = sumOfBitrate/bitrateCounter;\n  console.log("Mean Bufferlenght: " + meanBuffer.toString() + "Mean Bitrate: " + meanBitrate.toString());#' dashjs/app/main_test.js
 
 
 
