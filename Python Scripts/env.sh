@@ -65,7 +65,7 @@ sudo cat video_2400k_dash.mpd >> test.mpd
 #Editing the MPD file line by line so that it removes unnecisary repeated text and aligns the representations. It also changes the ID's so DashJS can differentiate between the representations. 
 sudo sed -i '38,48d;77,87d;49 s_id="1"_id="2"_;88 s_id="1"_id="3"_' test.mpd  
 
-#Putting code into Dash that 
+#Putting code into Dash (main.js) to view the average buffer length in testing
 sudo sed -i '757 s~^~var totalBuffer = 0;\n var prevBuffer = 0;\n var bufferCounter = 0;\n var totalBitrate =0; \n var bitrateCounter=0;\n~;778 s~^~\nif (bufferLevel != prevBuffer) {\ntotalBuffer = totalBuffer + bufferLevel;\nbufferCounter++;\n }\nprevBuffer = bufferLevel;\n totalBitrate = Bitrate + bitrate;\n bitrateCounter++;\n var meanBuffer = totalBuffer/bufferCounter;\n var meanBitrate = totalBitrate/bitrateCounter;\n  console.log("Mean Bufferlenght: " + meanBuffer.toString() + "Mean Bitrate: " + meanBitrate.toString());~' dashjs/app/main.js
 
 #Creating the Python file for the network topology
@@ -89,7 +89,7 @@ def myNetwork():
                    build=False)
 
     info( '*** Adding controller\n' )
-    net.addController(name='c0',controller=RemoteController,ip='192.168.10.200', port=6653)
+    net.addController(name='c0',controller=RemoteController,ip='192.168.10.245, port=6653)
 
     bw=input("Input bw: ")
     dl=input("Input dl: ")
