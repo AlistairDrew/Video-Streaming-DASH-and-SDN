@@ -1,4 +1,7 @@
+#!/bin/bash
 
+sudo rm network.py
+echo " 
 #!/usr/bin/python
 
 import subprocess
@@ -21,7 +24,7 @@ def myNetwork():
 
     bw=input("Input bw: ")
     dl=input("Input dl: ")
-    ls=input("Input ls: ")
+    ls=int(input("Input ls: "))
 
     info( '*** Add single switch\n')
     s1 = net.addSwitch('s1')
@@ -50,3 +53,7 @@ def myNetwork():
 if __name__ == '__main__':
     setLogLevel( 'info' )
     myNetwork()
+" > network.py
+
+sudo chmod +x network.py
+

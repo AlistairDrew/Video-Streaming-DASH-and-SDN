@@ -110,7 +110,7 @@ app.controller('DashController', function ($scope, sources, contributors) {
     $scope.chartState = {
         audio:{
             buffer:         {data: [], selected: false, color: '#65080c', label: 'Audio Buffer Level'},
-            Bitrate:        {data: [], selected: false, color: '#00CCBE', label: 'Audio Bitrate (kbps)'},
+            bitrate:        {data: [], selected: false, color: '#00CCBE', label: 'Audio Bitrate (kbps)'},
             index:          {data: [], selected: false, color: '#ffd446', label: 'Audio Current Index'},
             pendingIndex:   {data: [], selected: false, color: '#FF6700', label: 'AudioPending Index'},
             ratio:          {data: [], selected: false, color: '#329d61', label: 'Audio Ratio'},
@@ -120,7 +120,7 @@ app.controller('DashController', function ($scope, sources, contributors) {
         },
         video:{
             buffer:         {data: [], selected: true, color: '#00589d', label: 'Video Buffer Level'},
-            Bitrate:        {data: [], selected: true, color: '#ff7900', label: 'Video Bitrate (kbps)'},
+            bitrate:        {data: [], selected: true, color: '#ff7900', label: 'Video Bitrate (kbps)'},
             index:          {data: [], selected: false, color: '#326e88', label: 'Video Current Quality'},
             pendingIndex:   {data: [], selected: false, color: '#44c248', label: 'Video Pending Index'},
             ratio:          {data: [], selected: false, color: '#00CCBE', label: 'Video Ratio'},
@@ -754,13 +754,7 @@ app.controller('DashController', function ($scope, sources, contributors) {
         }
 
         $scope.chartOptions.legend.noColumns = Math.min($scope.chartData.length, 5);
-
     };
-var totalBuffer = 0;
- var prevBuffer = 0;
- var bufferCounter = 0;
- var totalBitrate =0; 
- var BitrateCounter=0;
 
     function updateMetrics(type) {
 
@@ -774,23 +768,14 @@ var totalBuffer = 0;
             var bufferLevel = dashMetrics.getCurrentBufferLevel(metrics);
             var maxIndex = dashMetrics.getMaxIndexForBufferType(type, periodIdx);
             var index = $scope.player.getQualityFor(type);
-            var Bitrate = repSwitch ? Math.round(dashMetrics.getBandwidthForRepresentation(repSwitch.to, periodIdx) / 1000) : NaN;
+            var bitrate = repSwitch ? Math.round(dashMetrics.getBandwidthForRepresentation(repSwitch.to, periodIdx) / 1000) : NaN;
             var droppedFPS = dashMetrics.getCurrentDroppedFrames(metrics) ? dashMetrics.getCurrentDroppedFrames(metrics).droppedFrames : 0;
 
             $scope[type + "BufferLength"] = bufferLevel;
             $scope[type + "MaxIndex"] = maxIndex;
-            $scope[type + "Bitrate"] = Bitrate;
+            $scope[type + "Bitrate"] = bitrate;
+            $scope[type + "DroppedFrames"] = droppedFPS;
 
-if (bufferLevel != prevBuffer) {
-totalBuffer = totalBuffer + bufferLevel;
-bufferCounter++;
- }
-prevBuffer = bufferLevel;
- totalBitrate = Bitrate + Bitrate;
- BitrateCounter++;
- var averageBuffer = totalBuffer/bufferCounter;
- var averageBitrate = totalBitrate/BitrateCounter;
-  console.log("Average Bufferlength: " + averageBuffer.toString() + " Average Bitrate: " + averageBitrate.toString());
             var httpMetrics = calculateHTTPMetrics(type, dashMetrics.getHttpRequests(metrics));
             if (httpMetrics) {
                 $scope[type + "Download"] = httpMetrics.download[type].low.toFixed(2) + " | " + httpMetrics.download[type].average.toFixed(2) + " | " + httpMetrics.download[type].high.toFixed(2);
@@ -801,7 +786,7 @@ prevBuffer = bufferLevel;
             if ($scope.chartCount % 2 === 0) {
                 $scope.plotPoint('buffer', type, bufferLevel);
                 $scope.plotPoint('index', type, index);
-                $scope.plotPoint('Bitrate', type, Bitrate);
+                $scope.plotPoint('bitrate', type, bitrate);
                 $scope.plotPoint('droppedFPS', type, droppedFPS);
                 if (httpMetrics) {
                     $scope.plotPoint('download', type, httpMetrics.download[type].average.toFixed(2));
@@ -906,4 +891,3 @@ function legendLabelClickHandler(obj) {
     scope.enableChartByName(id[1], id[0]);
     scope.safeApply();
 }
-
