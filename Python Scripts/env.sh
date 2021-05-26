@@ -69,7 +69,7 @@ sudo sed -i '38,48d;77,87d;49 s_id="1"_id="2"_;88 s_id="1"_id="3"_' test.mpd
 sudo sed -i '759 s~^~var totalBuffer = 0;\n var prevBuffer = 0;\n var bufferCounter = 0;\n var totalBitrate =0; \n var bitrateCounter=0;\n~;778 s~^~\nif (bufferLevel != prevBuffer) {\ntotalBuffer = totalBuffer + bufferLevel;\nbufferCounter++;\n }\nprevBuffer = bufferLevel;\n totalBitrate = Bitrate + Bitrate;\n bitrateCounter++;\n var averageBuffer = totalBuffer/bufferCounter;\n var averageBitrate = totalBitrate/bitrateCounter;\n  console.log("Average Bufferlength: " + averageBuffer.toString() + "Average Bitrate: " + averageBitrate.toString());~' dashjs/app/main.js
 
 # Putting code into Dash (desh.all.debug.js) to display the initial delay in expermiments 
-sudo sed -i '25543 s#^#\nconsole.time("answer time");\n#;30920 s#^#\n console.timeLog("answer time");console.timeEnd("answer time");#' /var/www/html/dashjs/dist/dash.all.debug.js
+sudo sed -i '25543 s#^#\nconsole.time("answer time");\n#;30919 s#^#\n console.timeLog("answer time");\n console.timeEnd("answer time");#' /var/www/html/dashjs/dist/dash.all.debug.js
 #Creating the Python file for the network topology
 cd 
 echo "
