@@ -1,0 +1,24 @@
+Sections
+
+Intro page = Needs work
+
+Table of contents = Could do with more granularity?
+
+Abstract = Needs work 
+
+Introduction
+	
+	SDN = Good
+	DASH = Good
+	Video Streaming Quality = Needs major work 
+	Steps Taken = Maybe as bullet point format? more easily digestable 
+	Structure of Report = alright
+
+Testbed Setup
+	
+	Testbed General setup and configuration 
+	Additional Code developed 
+
+Discussion and network management via REST API
+
+Conclusion 
