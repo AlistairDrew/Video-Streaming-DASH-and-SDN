@@ -9,16 +9,15 @@ sudo apt-get install curl -y
 sudo apt-get install tree -y
 sudo apt-get install git -y
 
-#Service packages for webserver hosting and measurement 
+#Packages for webserver hosting to act as DASH Server.  
 sudo apt-get install apache2 -y
-sudo apt-get install wireshark-qt
 
-#Segmentation Packages 
+#Video segmentation and encoding packages
 sudo apt-get install x264 -y
 sudo apt-get install gpac -y
 sudo apt-get install ffmpeg -y 
 
-#Installing Mininet 
+#Installing Mininet for setting up network topology. 
 git clone https://github.com/mininet/mininet
 cd mininet && git fetch
 git tag
@@ -37,7 +36,7 @@ sudo rm microsoft.gpg
 sudo apt update
 sudo apt install microsoft-edge-dev
 
-#Pulling resources from Uni server and processing them
+#Pulling video from uni server and DASHjs that acts as DASH Client.  
 cd /var/www/html/
 sudo wget 10.224.41.8/bbb/bbb1.mp4
 sudo ffmpeg -i bbb1.mp4 -t 00:02:00 bbb1_2m.mp4
@@ -62,7 +61,8 @@ sudo cat video_600k_dash.mpd >> test.mpd
 sudo cat video_1200k_dash.mpd >> test.mpd
 sudo cat video_2400k_dash.mpd >> test.mpd
 
-#Editing the MPD file line by line so that it removes unnecisary repeated text and aligns the representations. It also changes the ID's so DashJS can differentiate between the representations. 
+#Editing the MPD file line by line so that it removes unnecisary repeated text and aligns the representations. 
+#It also changes the ID's so DashJS can differentiate between the representations. 
 sudo sed -i '38,48d;77,87d;49 s_id="1"_id="2"_;88 s_id="1"_id="3"_' test.mpd  
 
 #Putting code into Dash (main.js) to view the average buffer length in experiments
@@ -70,6 +70,7 @@ sudo sed -i '759 s~^~var totalBuffer = 0;\n var prevBuffer = 0;\n var bufferCoun
 
 # Putting code into Dash (desh.all.debug.js) to display the initial delay in expermiments 
 sudo sed -i '25543 s#^#\nconsole.time("answer time");\n#;30920 s#^#\n console.timeLog("answer time");\nconsole.timeEnd("answer time");\n#' /var/www/html/dashjs/dist/dash.all.debug.bak.js
+
 #Creating the Python file for the network topology
 cd 
 echo "
