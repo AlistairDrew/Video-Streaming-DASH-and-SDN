@@ -754,14 +754,13 @@ app.controller('DashController', function ($scope, sources, contributors) {
         }
 
         $scope.chartOptions.legend.noColumns = Math.min($scope.chartData.length, 5);
-
     };
-var totalBuffer = 0;
- var prevBuffer = 0;
- var bufferCounter = 0;
- var totalBitrate =0; 
- var BitrateCounter=0;
 
+var totalBuffer=0;
+var prevBuffer=0;
+var bufferCounter=0;
+var totalBitrate=0; 
+var bitrateCounter=0;
     function updateMetrics(type) {
 
         var metrics = $scope.player.getMetricsFor(type);
@@ -780,17 +779,19 @@ var totalBuffer = 0;
             $scope[type + "BufferLength"] = bufferLevel;
             $scope[type + "MaxIndex"] = maxIndex;
             $scope[type + "Bitrate"] = Bitrate;
+            $scope[type + "DroppedFrames"] = droppedFPS;
 
 if (bufferLevel != prevBuffer) {
 totalBuffer = totalBuffer + bufferLevel;
 bufferCounter++;
  }
 prevBuffer = bufferLevel;
- totalBitrate = Bitrate + Bitrate;
- BitrateCounter++;
- var averageBuffer = totalBuffer/bufferCounter;
- var averageBitrate = totalBitrate/BitrateCounter;
-  console.log("Average Bufferlength: " + averageBuffer.toString() + " Average Bitrate: " + averageBitrate.toString());
+totalBitrate = Bitrate + Bitrate;
+bitrateCounter++;
+var averageBuffer = totalBuffer/bufferCounter;
+var averageBitrate = totalBitrate/bitrateCounter;
+console.log("Average Bufferlength: " + averageBuffer.toString() + "Average Bitrate: " + averageBitrate.toString());
+  
             var httpMetrics = calculateHTTPMetrics(type, dashMetrics.getHttpRequests(metrics));
             if (httpMetrics) {
                 $scope[type + "Download"] = httpMetrics.download[type].low.toFixed(2) + " | " + httpMetrics.download[type].average.toFixed(2) + " | " + httpMetrics.download[type].high.toFixed(2);

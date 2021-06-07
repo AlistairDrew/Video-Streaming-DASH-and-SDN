@@ -92,7 +92,7 @@ def myNetwork():
                    build=False)
 
     info( '*** Adding controller\n' )
-    net.addController(name='c0',controller=RemoteController,ip='192.168.10.245, port=6653)
+    net.addController(name='c0',controller=RemoteController,ip='192.168.10.223, port=6653)
 
     bw=input("Input bw: ")
     dl=input("Input dl: ")
